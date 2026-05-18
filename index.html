@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Clyde Valley Group</title>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+    <style>
+      .header__container {
+        padding-block: 8rem;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        color: #fff; /* Ensuring text visibility on dark backgrounds */
+        text-align: left; /* Aligning the text to the left */
+        display: flex; /* Using flexbox */
+        align-items: center; /* Aligning items vertically in the center */
+        justify-content: flex-start; /* Aligning items to the start (left) of the container */
+        position: relative; /* Needed for absolute positioning of the text container */
+      }
+
+      /* New style for the text container */
+      .header__text {
+        position: absolute;
+        left: 10px; /* Adjust as needed */
+        z-index: 2; /* Ensure text is above the background image */
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="logo nav__logo">
+            <a href="home"><img src="assets/logo.png" alt="logo" /></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#service">SERVICES</a></li>
+          <li><a href="#price">WHAT WE DO</a></li>
+          <button class="btn">0845 465 1053</button>
+        </ul>
+      </nav>
+      <div class="section__container header__container" id="home">
+        <div class="header__content">
+          <h1>
+            Alternative Fuel Systems for Commercial and Passenger Vehicles
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = [
+          {
+            img: "assets/header.jpg",
+            text: "Alternative Fuel Systems",
+          },
+          {
+            img: "assets/truck.png",
+            text: "LNG - DUAL FUEL SYSTEM",
+          },
+          {
+            img: "assets/lpg.jpg",
+            text: "LPG - DIESEL BLEND",
+          },
+          {
+            img: "assets/convert.jpg",
+            text: "Convert Your Petrol Engine to Bio-LPG",
+          },
+          {
+            img: "assets/performance.jpg",
+            text: "Performance Upgrades",
+          },
+          {
+            img: "assets/enhance.jpg",
+            text: "Vehicle Enhancements",
+          },
+          {
+            img: "assets/motor.jpg",
+            text: "MOTOR-SPORT",
+          },
+          {
+            img: "assets/partner.jpg",
+            text: "Partnership Opportunities",
+          },
+        ];
+
+        let currentSlide = 0;
+
+        function updateHeader() {
+          const headerContainer = document.querySelector(".header__container");
+          const headerTitle = headerContainer.querySelector("h1");
+
+          headerContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${slides[currentSlide].img}")`;
+          headerTitle.textContent = slides[currentSlide].text;
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          updateHeader();
+        }
+
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+        updateHeader(); // Initialize with the first slide
+      });
+    </script>
+
+    <section class="section__container experience__container" id="about">
+      <div class="experience__image">
+        <img src="assets/experience.jpg" alt="experience" />
+      </div>
+      <div class="experience__content">
+        <h2 class="section__header"></h2>
+        <p class="section__description">
+          The Clyde Valley Group are a young, dynamic, forward thinking business
+          made up with a vibrant mix of professional individuals who are pushing
+          the boundaries of Low Carbon Vehicle Technology and Environmental
+          Motoring.
+        </p>
+      </div>
+    </section>
+
+    <section class="service" id="service">
+      <div class="section__container service__container">
+        <div class="service__grid">
+          <div class="service__card">
+            <a href="dual-fuel-systems.html">
+              <img src="assets/service-2.jpg" alt="Dual Fuel Systems" />
+            </a>
+            <h4>Duel Fuel Systems</h4>
+            <p>Eco-friendly fuel conversions for lower emissions and costs.</p>
+            <br />
+            <a href="dual-fuel-systems.html" class="btn">Read More</a>
+          </div>
+          <div class="service__card">
+            <a href="lpg-car-conversion.html">
+              <img src="assets/service-4.jpg" alt="LPG Car Conversion" />
+            </a>
+            <h4>LPG Car Conversion</h4>
+            <p>
+              Upgrade to LPG with our quick conversion service for better fuel
+              efficiency and lower emissions.
+            </p>
+            <br />
+            <a href="lpg-car-conversion.html" class="btn">Read More</a>
+          </div>
+          <div class="service__card">
+            <a href="motorsport-services.html">
+              <img src="assets/service-3.jpg" alt="Motorsport Services" />
+            </a>
+            <h4>Motorsport Services</h4>
+            <p>
+              Motor-sport unites people by stirring emotions and inspiring them
+              through its thrilling energy and excitement.
+            </p>
+            <br />
+            <a href="motorsport-services.html" class="btn">Read More</a>
+          </div>
+          <div class="service__card">
+            <a href="vehicle-enhancements.html">
+              <img src="assets/service-1.jpg" alt="Vehicle Enhancements" />
+            </a>
+            <h4>Vehicle Enhancements</h4>
+            <p>Performance, Tuning and Servicing</p>
+            <br />
+            <a href="vehicle-enhancements.html" class="btn">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container price__container" id="price">
+      <p class="section__subheader">More About Us!</p>
+      <h2 class="section__header">What We Do</h2>
+      <p class="section__description">
+        We offer a range of different services for your vehicle
+      </p>
+      <div class="price__grid">
+        <div class="price__card">
+          <h4>ALTERNATIVE FUEL SYSTEMS</h4>
+          <img src="assets/sv1.jpg" alt="Alternative Fuel Systems" />
+          <br />
+          <p>
+            Our Dual-Fuel Systems for commercial vehicles enable usage of LNG,
+            CNG, CBM, and LPG/BioLPG, offering easy retrofitting, significant
+            fuel cost, and emissions savings.
+          </p>
+          <button class="btn">0845 465 1053</button>
+        </div>
+        <div class="price__card">
+          <h4>CARBON ZERO RACING</h4>
+          <img src="assets/sv2.jpg" alt="Alternative Fuel Systems" />
+          <br />
+          <p>
+            Our goal is to forge winning partnerships in and out of racing;
+            Carbon Zero Racing is a thrilling new entry in motorsport.
+          </p>
+          <button class="btn">0845 465 1053</button>
+        </div>
+        <div class="price__card">
+          <h4>VEHICLE ENHANCEMENTS</h4>
+          <img src="assets/sv3.jpg" alt="Alternative Fuel Systems" />
+          <br />
+          <p>
+            Clyde Valley Group is launching a division focused on performance
+            tuning, servicing, and upgrades, including tyres, wheels,
+            suspension, brakes, exhausts, and engine enhancements.
+          </p>
+          <button class="btn">0845 465 1053</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="logo footer__logo">
+            <a href="#"><img src="assets/logo.png" alt="logo" /></a>
+          </div>
+          <p class="section__description">
+            The Clyde Valley Group are a young, dynamic, forward thinking
+            business made up with a vibrant mix of professional individuals who
+            are pushing the boundaries of Low Carbon Vehicle Technology and
+            Environmental Motoring.
+          </p>
+          <ul class="footer__socials">
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-google-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-youtube-line"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Info</h4>
+          <ul class="footer__links">
+            <li>
+              <p>Phone: <span>0845 465 1053</span></p>
+            </li>
+            <li>
+              <p>Email: <span>Colin@ClydeValleyGroup.com</span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="footer__bar">
+      Copyright © 2026 Clyde Valley Group. All rights reserved.
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
